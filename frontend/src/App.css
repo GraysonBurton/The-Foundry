@@ -1,0 +1,383 @@
+/* ===== The Foundry — Global Styles ===== */
+:root {
+  --color-bg: #0d0d0d;
+  --color-bg-card: #1a1a1a;
+  --color-bg-elevated: #242424;
+  --color-gold: #c9a84c;
+  --color-gold-light: #e8d48b;
+  --color-gold-dark: #a07d2e;
+  --color-cream: #f5f0e8;
+  --color-text: #e8e8e8;
+  --color-text-muted: #999;
+  --color-danger: #c0392b;
+  --color-success: #27ae60;
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-body: "Lato", "Segoe UI", sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-display);
+  color: var(--color-cream);
+}
+
+a { color: var(--color-gold); text-decoration: none; }
+a:hover { color: var(--color-gold-light); }
+
+/* ===== Navbar ===== */
+.foundry-navbar {
+  background: rgba(13, 13, 13, 0.95) !important;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+  padding: 0.6rem 0;
+  transition: background 0.3s;
+}
+.foundry-navbar .navbar-brand {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: var(--color-gold) !important;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.foundry-navbar .nav-link {
+  color: var(--color-cream) !important;
+  font-weight: 400;
+  font-size: 0.92rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 0.5rem 0.9rem !important;
+  transition: color 0.2s;
+}
+.foundry-navbar .nav-link:hover,
+.foundry-navbar .nav-link.active {
+  color: var(--color-gold) !important;
+}
+.navbar-toggler { border-color: rgba(201, 168, 76, 0.4) !important; }
+.navbar-toggler-icon { filter: invert(0.8); }
+
+/* ===== Hero Sections ===== */
+.hero-section {
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(13, 13, 13, 0.7) 0%,
+    rgba(13, 13, 13, 0.4) 50%,
+    rgba(13, 13, 13, 0.85) 100%
+  );
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  padding: 2rem;
+}
+.hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--color-cream);
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+}
+.hero-content p {
+  font-size: 1.2rem;
+  color: var(--color-text-muted);
+  margin-bottom: 2rem;
+}
+
+/* ===== Gold Button ===== */
+.btn-gold {
+  background: linear-gradient(135deg, var(--color-gold), var(--color-gold-dark));
+  color: #0d0d0d;
+  border: none;
+  padding: 0.65rem 1.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.85rem;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+.btn-gold:hover {
+  background: linear-gradient(135deg, var(--color-gold-light), var(--color-gold));
+  color: #0d0d0d;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(201, 168, 76, 0.3);
+}
+.btn-outline-gold {
+  background: transparent;
+  color: var(--color-gold);
+  border: 1px solid var(--color-gold);
+  padding: 0.6rem 1.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.85rem;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+.btn-outline-gold:hover {
+  background: var(--color-gold);
+  color: #0d0d0d;
+}
+
+/* ===== Cards ===== */
+.menu-card {
+  background: var(--color-bg-card);
+  border: 1px solid rgba(201, 168, 76, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  height: 100%;
+}
+.menu-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(201, 168, 76, 0.12);
+  border-color: rgba(201, 168, 76, 0.3);
+}
+.menu-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+.menu-card .card-body {
+  padding: 1.2rem;
+}
+.menu-card .card-title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--color-cream);
+  margin-bottom: 0.5rem;
+}
+.menu-card .card-text {
+  color: var(--color-text-muted);
+  font-size: 0.88rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.menu-card .price {
+  color: var(--color-gold);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+/* ===== Section Styles ===== */
+.section-dark {
+  background: var(--color-bg);
+  padding: 4rem 0;
+}
+.section-elevated {
+  background: var(--color-bg-card);
+  padding: 4rem 0;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  color: var(--color-cream);
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+.section-subtitle {
+  text-align: center;
+  color: var(--color-text-muted);
+  margin-bottom: 3rem;
+  font-size: 1rem;
+}
+.gold-divider {
+  width: 60px;
+  height: 2px;
+  background: var(--color-gold);
+  margin: 1rem auto 2rem;
+}
+
+/* ===== Forms ===== */
+.form-dark .form-control,
+.form-dark .form-select {
+  background: var(--color-bg-elevated);
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  color: var(--color-text);
+  border-radius: 2px;
+}
+.form-dark .form-control:focus,
+.form-dark .form-select:focus {
+  border-color: var(--color-gold);
+  box-shadow: 0 0 0 0.15rem rgba(201, 168, 76, 0.2);
+  background: var(--color-bg-elevated);
+  color: var(--color-text);
+}
+.form-dark .form-label {
+  color: var(--color-cream);
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ===== Footer ===== */
+.foundry-footer {
+  background: #0a0a0a;
+  border-top: 1px solid rgba(201, 168, 76, 0.15);
+  padding: 2.5rem 0 1.5rem;
+  color: var(--color-text-muted);
+  font-size: 0.88rem;
+}
+.foundry-footer h5 {
+  color: var(--color-gold);
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* ===== Tags & Badges ===== */
+.dietary-tag {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: 2px;
+  margin-right: 0.3rem;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+}
+.tag-vegetarian { background: #2d6a4f; color: #b7e4c7; }
+.tag-vegan { background: #1b4332; color: #95d5b2; }
+.tag-gluten-free { background: #7f4f24; color: #e6ccb2; }
+.tag-dairy-free { background: #3a5a40; color: #dad7cd; }
+.tag-nut-free { background: #6c584c; color: #f0efeb; }
+.tag-spicy { background: #6a040f; color: #fec89a; }
+
+/* ===== Rating Stars ===== */
+.star-filled { color: var(--color-gold); }
+.star-empty { color: #444; }
+
+/* ===== Admin Dashboard ===== */
+.admin-stat-card {
+  background: var(--color-bg-elevated);
+  border: 1px solid rgba(201, 168, 76, 0.15);
+  border-radius: 4px;
+  padding: 1.5rem;
+  text-align: center;
+}
+.admin-stat-card h3 {
+  color: var(--color-gold);
+  font-size: 2.2rem;
+  margin-bottom: 0.3rem;
+}
+.admin-stat-card p {
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ===== Auth Pages ===== */
+.auth-container {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+.auth-card {
+  background: var(--color-bg-card);
+  border: 1px solid rgba(201, 168, 76, 0.15);
+  border-radius: 4px;
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 440px;
+}
+.auth-card h2 {
+  font-family: var(--font-display);
+  color: var(--color-gold);
+  text-align: center;
+  margin-bottom: 0.3rem;
+}
+
+/* ===== Page Minimum Height ===== */
+.page-content { min-height: calc(100vh - 160px); }
+
+/* ===== Review Card ===== */
+.review-card {
+  background: var(--color-bg-elevated);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 4px;
+  padding: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+/* ===== Filter Buttons ===== */
+.filter-btn {
+  background: var(--color-bg-elevated);
+  color: var(--color-text-muted);
+  border: 1px solid rgba(201, 168, 76, 0.15);
+  padding: 0.4rem 1rem;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--color-gold);
+  color: #0d0d0d;
+  border-color: var(--color-gold);
+}
+
+/* ===== Table Dark Override ===== */
+.table-foundry {
+  --bs-table-bg: var(--color-bg-card);
+  --bs-table-color: var(--color-text);
+  --bs-table-border-color: rgba(201, 168, 76, 0.1);
+  --bs-table-striped-bg: var(--color-bg-elevated);
+  --bs-table-hover-bg: rgba(201, 168, 76, 0.05);
+}
+
+/* ===== Loading Spinner ===== */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+}
+
+/* ===== Toast / Alert Custom ===== */
+.alert-foundry {
+  background: var(--color-bg-elevated);
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  color: var(--color-cream);
+  border-radius: 2px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-content h1 { font-size: 2.2rem; }
+  .section-title { font-size: 1.7rem; }
+  .auth-card { padding: 1.5rem; }
+}
