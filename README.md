@@ -30,6 +30,17 @@ Built as a two-person final project for SE/COM S 3190 at Iowa State University, 
 
 Teammate: Joshua Reis (Home page, main menu, dish details, admin dashboard, backend auth, and menu/review APIs)
 
+## Screenshots
+
+**Drinks & Desserts menu with dietary filters**
+![Menu page](menu.png)
+
+**Reservations & Orders**
+![Reservations page](reservations.png)
+
+**Admin Dashboard**
+![Admin dashboard](admin.png)
+
 ## Running Locally
 
 **Prerequisites:** Node.js 18+ and MongoDB (local install or a MongoDB Atlas connection string)
