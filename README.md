@@ -4,7 +4,7 @@ A full-stack restaurant web application with menu browsing, reservations, online
 
 Built as a two-person final project for SE/COM S 3190 at Iowa State University, Spring 2026.
 
-![Screenshot of The Foundry](screenshot.png)
+![Screenshot of The Foundry](screenshots/home.png)
 
 ## Tech Stack
 
@@ -33,13 +33,13 @@ Teammate: Joshua Reis (Home page, main menu, dish details, admin dashboard, back
 ## Screenshots
 
 **Drinks & Desserts menu with dietary filters**
-![Menu page](menu.png)
+![Menu page](screenshots/menu.png)
 
 **Reservations & Orders**
-![Reservations page](reservations.png)
+![Reservations page](screenshots/reservations.png)
 
 **Admin Dashboard**
-![Admin dashboard](admin.png)
+![Admin dashboard](screenshots/admin.png)
 
 ## Running Locally
 
